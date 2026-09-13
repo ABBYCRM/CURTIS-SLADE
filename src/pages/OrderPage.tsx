@@ -106,9 +106,35 @@ function Retailers() {
 }
 
 function AmazonIcon() {
+  // Recognizable "a" + smile arrow — evokes the Amazon mark without copying trademark
   return (
-    <svg viewBox="0 0 24 24" className="w-8 h-8 text-gold" fill="currentColor" aria-hidden="true">
-      <path d="M18.5 13.7c-.4 1-.9 1.9-1.6 2.7-.9 1.1-2 2.2-3.3 2.2-1.2 0-1.5-.8-3-.8s-1.9.8-3.1.8c-1.3 0-2.3-1.1-3.2-2.2-2.1-2.6-2.4-6.7-1-8.8.9-1.4 2.4-2.3 3.9-2.3 1.2 0 2.3.8 3 .8.7 0 2-.9 3.4-.8.6 0 2.3.2 3.4 1.7-.1.1-2 1.2-2 3.4.1 2.7 2.4 3.6 2.5 3.3zm-3.4-9.5c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.6-1 2.6 1 .1 2.1-.5 2.7-1.2z" />
+    <svg viewBox="0 0 48 48" className="w-10 h-10" aria-hidden="true">
+      <defs>
+        <linearGradient id="amz-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#f5e9b8" />
+          <stop offset="50%" stopColor="#d4af37" />
+          <stop offset="100%" stopColor="#86671a" />
+        </linearGradient>
+      </defs>
+      <text
+        x="24"
+        y="32"
+        textAnchor="middle"
+        fontFamily="Cinzel, serif"
+        fontWeight="900"
+        fontSize="28"
+        fill="url(#amz-g)"
+      >
+        a
+      </text>
+      <path
+        d="M10 36 Q24 42 38 36"
+        stroke="url(#amz-g)"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path d="M36 34 L40 36 L36 38 Z" fill="url(#amz-g)" />
     </svg>
   );
 }
