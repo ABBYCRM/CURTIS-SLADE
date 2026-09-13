@@ -34,7 +34,13 @@ export const book = {
     'South Florida Noir',
   ],
   buyLinks: [
-    { label: 'Amazon', url: 'https://www.amazon.com/', note: 'Paperback · Hardcover · Kindle' },
+    {
+      label: 'Amazon',
+      url: 'https://a.co/d/0eJcdXta',
+      asin: 'B0HJMPRN5L',
+      featured: true,
+      note: 'Paperback · Hardcover · Kindle',
+    },
     { label: 'Barnes & Noble', url: 'https://www.barnesandnoble.com/', note: 'In stock nationwide' },
     { label: 'Bookshop.org', url: 'https://bookshop.org/', note: 'Support local bookstores' },
     { label: 'Apple Books', url: 'https://books.apple.com/', note: 'iPhone · iPad · Mac' },

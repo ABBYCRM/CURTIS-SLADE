@@ -23,6 +23,17 @@ function Hero() {
           Choose your format. Choose your store.
         </p>
         <div className="rule-gold" />
+        <div className="mt-10">
+          <a
+            href={book.buyLinks[0].url}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="btn-gold"
+          >
+            Buy on Amazon
+            <External />
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -32,8 +43,39 @@ function Retailers() {
   return (
     <section className="py-16">
       <div className="container-x">
+        {/* Primary Amazon CTA — featured */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <a
+            href={book.buyLinks[0].url}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="group relative block overflow-hidden rounded-2xl border-2 border-gold/60 hover:border-gold transition-all shadow-gold-glow"
+          >
+            <div className="absolute -top-10 -right-10 w-48 h-48 bg-gold/20 rounded-full blur-3xl group-hover:bg-gold/30 transition-colors" />
+            <div className="relative px-8 py-10 lg:px-12 lg:py-12 bg-gradient-to-br from-ink via-black to-ink flex flex-col sm:flex-row items-center gap-6">
+              <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gold/15 border border-gold/40 flex items-center justify-center">
+                <AmazonIcon />
+              </div>
+              <div className="flex-1 text-center sm:text-left">
+                <div className="text-xs uppercase tracking-[0.3em] text-gold mb-2">
+                  Primary Retailer · ASIN {book.buyLinks[0].asin}
+                </div>
+                <div className="font-display text-3xl lg:text-4xl text-gold-gradient mb-2">
+                  Buy on Amazon
+                </div>
+                <div className="text-bone/70 text-sm">{book.buyLinks[0].note}</div>
+              </div>
+              <div className="btn-gold text-sm flex-shrink-0">
+                Order Now
+                <External />
+              </div>
+            </div>
+          </a>
+        </div>
+
+        {/* Other retailers */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
-          {book.buyLinks.map((r) => (
+          {book.buyLinks.slice(1).map((r) => (
             <a
               key={r.label}
               href={r.url}
@@ -60,6 +102,14 @@ function Retailers() {
         </p>
       </div>
     </section>
+  );
+}
+
+function AmazonIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-8 h-8 text-gold" fill="currentColor" aria-hidden="true">
+      <path d="M18.5 13.7c-.4 1-.9 1.9-1.6 2.7-.9 1.1-2 2.2-3.3 2.2-1.2 0-1.5-.8-3-.8s-1.9.8-3.1.8c-1.3 0-2.3-1.1-3.2-2.2-2.1-2.6-2.4-6.7-1-8.8.9-1.4 2.4-2.3 3.9-2.3 1.2 0 2.3.8 3 .8.7 0 2-.9 3.4-.8.6 0 2.3.2 3.4 1.7-.1.1-2 1.2-2 3.4.1 2.7 2.4 3.6 2.5 3.3zm-3.4-9.5c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.6-1 2.6 1 .1 2.1-.5 2.7-1.2z" />
+    </svg>
   );
 }
 

@@ -51,10 +51,15 @@ function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link to="/order" className="btn-gold">
-                Get the Book
+              <a
+                href={book.buyLinks[0].url}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="btn-gold"
+              >
+                Buy on Amazon
                 <ArrowRight />
-              </Link>
+              </a>
               <Link to="/book" className="btn-ghost-gold">
                 Read the Synopsis
               </Link>
@@ -263,10 +268,15 @@ function CtaBanner() {
               Book 1 ends with a warning. Book 2 picks up the crown. Don't miss the next chapter.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/order" className="btn-gold">
-                Order Book 1 Now
+              <a
+                href={book.buyLinks[0].url}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="btn-gold"
+              >
+                Order on Amazon
                 <ArrowRight />
-              </Link>
+              </a>
               <Link to="/press" className="btn-ghost-gold">
                 Get Notified on Book 2
               </Link>

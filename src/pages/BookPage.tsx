@@ -74,9 +74,14 @@ function Cover() {
               <div className="eyebrow mb-3">Setting</div>
               <p className="text-bone/80">{book.setting}</p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Link to="/order" className="btn-gold text-sm flex-1 justify-center">
-                  Order Now
-                </Link>
+                <a
+                  href={book.buyLinks[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  className="btn-gold text-sm flex-1 justify-center"
+                >
+                  Buy on Amazon
+                </a>
                 <Link to="/press" className="btn-ghost-gold text-sm flex-1 justify-center">
                   Press Kit
                 </Link>

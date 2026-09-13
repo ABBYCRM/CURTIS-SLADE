@@ -1,5 +1,6 @@
 import { Outlet, Link, NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { book } from '../data/book';
 
 const nav = [
   { to: '/', label: 'Home' },
@@ -61,9 +62,15 @@ export function SiteLayout() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link to="/order" className="btn-gold text-xs">
-              Get the Book
-            </Link>
+            <a
+              href={book.buyLinks[0].url}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="btn-gold text-xs"
+              aria-label="Buy Mr. Big Guy on Amazon"
+            >
+              Buy on Amazon
+            </a>
           </div>
 
           <button
@@ -94,13 +101,15 @@ export function SiteLayout() {
                   {n.label}
                 </NavLink>
               ))}
-              <Link
-                to="/order"
+              <a
+                href={book.buyLinks[0].url}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
                 onClick={() => setOpen(false)}
                 className="btn-gold mt-3 text-xs justify-center"
               >
-                Get the Book
-              </Link>
+                Buy on Amazon
+              </a>
             </div>
           </div>
         )}
@@ -125,10 +134,19 @@ function SiteFooter() {
               <Crown className="w-6 h-6 text-gold" />
               <span className="font-display text-2xl text-gold-gradient">MR. BIG GUY</span>
             </div>
-            <p className="text-bone/70 max-w-md leading-relaxed">
+            <p className="text-bone/70 max-w-md leading-relaxed mb-6">
               The Rise and Fall of Curtis Slade. A street memoir from the streets of Dania Beach, Florida.
               Published by Slade Enterprise Group. To be continued: <em>Crown Me King.</em>
             </p>
+            <a
+              href={book.buyLinks[0].url}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="btn-gold text-xs"
+            >
+              Buy on Amazon
+              <Arrow />
+            </a>
           </div>
           <div>
             <div className="eyebrow mb-4">Explore</div>
@@ -181,6 +199,13 @@ function Crown({ className = '' }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
       <path d="M3 7l4 4 5-7 5 7 4-4-2 12H5L3 7zm2.5 14h13v2h-13v-2z" />
+    </svg>
+  );
+}
+function Arrow() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   );
 }
