@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrbigguybook.com/sitemap.xml
+
+# AI / LLM crawlers (AEO discovery)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Disallow common non-content paths
+Disallow: /api/
+Disallow: /admin/

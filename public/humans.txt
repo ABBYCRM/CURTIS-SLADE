@@ -1,0 +1,20 @@
+/* TEAM */
+Site builder: Slade Enterprise Group digital team
+Author: Curtis Slade
+Designer / Engineer: Slade Enterprise Group
+
+/* SITE */
+Last update: 2026-09-13
+Standards: HTML5, CSS3, ES2020, WCAG 2.1 AA
+Components: Tailwind, React 18, Vite
+Components library reference: 21st.dev (shadcn-style design language adapted to Tailwind)
+
+/* ASSETS */
+Cover photography: Slade Enterprise Group
+Editorial portrait: Slade Enterprise Group
+Miami skyline backdrop: generated for editorial use
+Dania Beach street backdrop: generated for editorial use
+
+/* CONTACT */
+press@mrbigguybook.com
+orders@mrbigguybook.com
