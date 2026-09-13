@@ -1,0 +1,46 @@
+{
+  "spec": {
+    "name": "curtis-slade",
+    "static_sites": [
+      {
+        "name": "web",
+        "github": {
+          "repo": "ABBYCRM/CURTIS-SLADE",
+          "branch": "main",
+          "deploy_on_push": true
+        },
+        "build_command": "npm install && npm run build",
+        "output_dir": "/dist",
+        "index_document": "index.html",
+        "error_document": "index.html",
+        "envs": [
+          {
+            "key": "NODE_VERSION",
+            "value": "20",
+            "scope": "BUILD_TIME"
+          }
+        ],
+        "cors": {
+          "allow_origins": [
+            "*"
+          ]
+        }
+      }
+    ],
+    "region": "nyc",
+    "ingress": {
+      "rules": [
+        {
+          "match": {
+            "path": {
+              "prefix": "/"
+            }
+          },
+          "component": {
+            "name": "web"
+          }
+        }
+      ]
+    }
+  }
+}
