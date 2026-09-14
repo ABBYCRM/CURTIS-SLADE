@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://curtis-slade-slsuc.ondigitalocean.app/sitemap.xml
