@@ -10,6 +10,7 @@ export function HomePage() {
       <Themes />
       <PressQuotes />
       <CtaBanner />
+      <Handoff />
     </>
   );
 }
@@ -292,6 +293,154 @@ function ArrowRight() {
   return (
     <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5">
       <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+function Handoff() {
+  const items = [
+    { label: 'Live Site', value: 'https://curtis-slade-slsuc.ondigitalocean.app', href: 'https://curtis-slade-slsuc.ondigitalocean.app' },
+    { label: 'GitHub Repo', value: 'github.com/ABBYCRM/CURTIS-SLADE', href: 'https://github.com/ABBYCRM/CURTIS-SLADE' },
+    { label: 'Amazon', value: 'a.co/d/0eJcdXta · ASIN B0HJMPRN5L', href: 'https://a.co/d/0eJcdXta' },
+    { label: 'ISBN', value: '979-8-218-01234-5' },
+    { label: 'Author', value: 'Curtis Slade · @mrbigguybook' },
+    { label: 'Publisher', value: 'Slade Enterprise Group · 1 Street Boyz Publications' },
+    { label: 'Hosting', value: 'DigitalOcean App Platform · region nyc' },
+    { label: 'Deploy', value: 'main branch · deploy_on_push · auto-rebuild' },
+  ];
+  return (
+    <section className="py-20 lg:py-28">
+      <div className="container-x">
+        <div className="card-noir p-8 lg:p-12">
+          <div className="flex items-start justify-between gap-6 mb-8">
+            <div>
+              <div className="eyebrow mb-3">Handoff</div>
+              <h2 className="font-display text-3xl lg:text-4xl">
+                Everything you need <span className="text-gold-gradient">at a glance</span>.
+              </h2>
+            </div>
+            <CrownMark />
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {items.map((it) => (
+              <div
+                key={it.label}
+                className="group flex items-center justify-between gap-4 px-5 py-4 rounded-xl bg-black/40 border border-gold/15 hover:border-gold/40 transition-colors"
+              >
+                <div className="min-w-0">
+                  <div className="text-xs uppercase tracking-[0.2em] text-bone/50 mb-1">
+                    {it.label}
+                  </div>
+                  {it.href ? (
+                    <a
+                      href={it.href}
+                      target={it.href.startsWith('http') ? '_blank' : undefined}
+                      rel={it.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="font-mono text-sm text-bone hover:text-gold transition-colors break-all"
+                    >
+                      {it.value}
+                    </a>
+                  ) : (
+                    <div className="font-mono text-sm text-bone break-all">{it.value}</div>
+                  )}
+                </div>
+                {it.href && (
+                  <a
+                    href={it.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 text-gold/60 hover:text-gold transition-colors"
+                    aria-label={`Open ${it.label}`}
+                  >
+                    <External />
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="rule-gold my-10" />
+
+          <div className="grid lg:grid-cols-3 gap-6 text-sm">
+            <HandoffFact label="Stack" value="React 18 · TypeScript · Vite 5 · Tailwind 3" />
+            <HandoffFact label="Routing" value="React Router 6 (SPA · base: './')" />
+            <HandoffFact label="AEO" value="llms.txt · sitemap.xml · robots.txt (LLM-allow) · humans.txt" />
+            <HandoffFact label="JSON-LD" value="Organization · Person · Book · FAQPage · BreadcrumbList · WebSite" />
+            <HandoffFact label="Imagery" value="4 generated · 3 book covers · gold/black noir palette" />
+            <HandoffFact label="Build" value="npm install && npm run build → dist/" />
+            <HandoffFact label="Run cmd" value="npx serve -s dist -l 8080 (SPA fallback)" />
+            <HandoffFact label="Instance" value="apps-s-1vcpu-0.5gb · $0/mo Starter tier" />
+            <HandoffFact label="App ID" value="7b6b6b7e-6c46-42e1-833e-4c8735ab25d7" />
+          </div>
+
+          <div className="mt-10 flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://github.com/ABBYCRM/CURTIS-SLADE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold text-sm justify-center"
+            >
+              <GithubIcon />
+              Open GitHub Repo
+            </a>
+            <a
+              href="https://a.co/d/0eJcdXta"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="btn-ghost-gold text-sm justify-center"
+            >
+              Buy on Amazon
+            </a>
+            <Link to="/book" className="btn-ghost-gold text-sm justify-center">
+              Read Synopsis
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HandoffFact({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-xs uppercase tracking-[0.2em] text-gold mb-1">{label}</div>
+      <div className="text-bone/85">{value}</div>
+    </div>
+  );
+}
+
+function CrownMark() {
+  return (
+    <svg viewBox="0 0 48 48" className="w-12 h-12 flex-shrink-0" aria-hidden="true">
+      <defs>
+        <linearGradient id="hand-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#f5e9b8" />
+          <stop offset="50%" stopColor="#d4af37" />
+          <stop offset="100%" stopColor="#86671a" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M8 18l7 7 9-12 9 12 7-7-3 19H11L8 18zm4 24h24v3H12v-3z"
+        fill="url(#hand-g)"
+      />
+    </svg>
+  );
+}
+
+function External() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M14 4h6v6M10 14L20 4M19 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h5" />
+    </svg>
+  );
+}
+
+function GithubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true">
+      <path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.2 9.2 7.7 10.7.6.1.8-.2.8-.5v-2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1.9-.3 1.8-.4 2.8-.4.9 0 1.9.1 2.8.4 2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.8 1 .8 2v3c0 .3.2.6.8.5 4.5-1.5 7.7-5.7 7.7-10.7C23.4 5.6 18.3.5 12 .5z" />
     </svg>
   );
 }
