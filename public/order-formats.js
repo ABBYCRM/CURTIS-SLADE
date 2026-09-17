@@ -3,7 +3,7 @@
   window.__mbgOrderFormats = true;
 
   var PAPERBACK =
-    "https://shop.ingramspark.com/b/084?params=K49XfjVAkmXLbkSb7h3kbY3UXNzUm6bDRd7KtnaLSv";
+    "https://shop.ingramspark.com/b/084?params=K49XlfjVAkmXLbkSb7h3kbY3UXNzUm6bDRd7KtnaLSv";
   var EBOOK = "https://a.co/d/0eJcdXta";
 
   var style = document.createElement("style");
